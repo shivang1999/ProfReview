@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0E2C3D2319B010002C4B87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E2C3C2319B010002C4B87 /* HomeViewController.swift */; };
+		2C0E2C3F2319B032002C4B87 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E2C3E2319B032002C4B87 /* DiscoverViewController.swift */; };
+		2C0E2C412319B046002C4B87 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E2C402319B046002C4B87 /* CameraViewController.swift */; };
+		2C0E2C432319B062002C4B87 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E2C422319B062002C4B87 /* ActivityViewController.swift */; };
+		2C0E2C452319B078002C4B87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E2C442319B078002C4B87 /* ProfileViewController.swift */; };
 		2C80A24723196C9100FECD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C80A24623196C9100FECD45 /* AppDelegate.swift */; };
 		2C80A24E23196C9300FECD45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C80A24D23196C9300FECD45 /* Assets.xcassets */; };
 		2C80A25123196C9300FECD45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C80A24F23196C9300FECD45 /* LaunchScreen.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0E2C3C2319B010002C4B87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2C0E2C3E2319B032002C4B87 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		2C0E2C402319B046002C4B87 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		2C0E2C422319B062002C4B87 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		2C0E2C442319B078002C4B87 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2C80A24323196C9100FECD45 /* sozial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sozial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C80A24623196C9100FECD45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C80A24D23196C9300FECD45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +69,11 @@
 				2C80A24623196C9100FECD45 /* AppDelegate.swift */,
 				2C80A25A2319701400FECD45 /* SignInViewController.swift */,
 				2C80A25C2319733800FECD45 /* SignUpViewController.swift */,
+				2C0E2C3C2319B010002C4B87 /* HomeViewController.swift */,
+				2C0E2C3E2319B032002C4B87 /* DiscoverViewController.swift */,
+				2C0E2C402319B046002C4B87 /* CameraViewController.swift */,
+				2C0E2C422319B062002C4B87 /* ActivityViewController.swift */,
+				2C0E2C442319B078002C4B87 /* ProfileViewController.swift */,
 				2C80A25823196DAB00FECD45 /* Start.storyboard */,
 				2C80A24D23196C9300FECD45 /* Assets.xcassets */,
 				2C80A24F23196C9300FECD45 /* LaunchScreen.storyboard */,
@@ -141,6 +156,11 @@
 				2C80A25D2319733800FECD45 /* SignUpViewController.swift in Sources */,
 				2C80A25B2319701400FECD45 /* SignInViewController.swift in Sources */,
 				2C80A24723196C9100FECD45 /* AppDelegate.swift in Sources */,
+				2C0E2C3D2319B010002C4B87 /* HomeViewController.swift in Sources */,
+				2C0E2C432319B062002C4B87 /* ActivityViewController.swift in Sources */,
+				2C0E2C3F2319B032002C4B87 /* DiscoverViewController.swift in Sources */,
+				2C0E2C452319B078002C4B87 /* ProfileViewController.swift in Sources */,
+				2C0E2C412319B046002C4B87 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

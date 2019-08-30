@@ -1,11 +1,6 @@
 # Sozial
 > Der Schwerpunkt lag auf dem Aufbau von Beziehungen zwischen den Teilnehmenden. 
 
-
-
-[![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
-
-
 ## Features
 
 - [x] Sign Up View 
@@ -14,8 +9,6 @@
 - [x] Posts
 - [x] User Profiles
 - [x] Hashtag System 
-
-
 
 ## Requirements
 

@@ -14,7 +14,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         //change color of view
-        view.backgroundColor = UIColor.black
 
         // Do any additional setup after loading the view.
         

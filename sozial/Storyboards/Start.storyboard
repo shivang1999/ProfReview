@@ -186,6 +186,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="kTr-rM-ErE" id="ufc-xV-e43"/>
                         <outlet property="passwordTextField" destination="ikH-l4-eZV" id="Vmc-12-sxW"/>
+                        <outlet property="profileImage" destination="Hka-hg-Xha" id="aRT-yY-2mK"/>
                         <outlet property="usernameTextField" destination="kWo-ZA-ShR" id="TtB-lF-5PX"/>
                     </connections>
                 </viewController>

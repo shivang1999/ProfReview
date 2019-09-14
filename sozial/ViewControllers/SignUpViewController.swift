@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +50,9 @@ class SignUpViewController: UIViewController {
         bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         
         passwordTextField.layer.addSublayer(bottomLayerPassword)
+        
+        profileImage.layer.cornerRadius = 40
+        profileImage.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }

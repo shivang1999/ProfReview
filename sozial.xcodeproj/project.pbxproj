@@ -79,13 +79,18 @@
 			isa = PBXGroup;
 			children = (
 				2C80A24623196C9100FECD45 /* AppDelegate.swift */,
-				2C80A25A2319701400FECD45 /* SignInViewController.swift */,
-				2C80A25C2319733800FECD45 /* SignUpViewController.swift */,
-				2C0E2C3C2319B010002C4B87 /* HomeViewController.swift */,
-				2C0E2C3E2319B032002C4B87 /* DiscoverViewController.swift */,
-				2C0E2C402319B046002C4B87 /* CameraViewController.swift */,
-				2C0E2C422319B062002C4B87 /* ActivityViewController.swift */,
-				2C0E2C442319B078002C4B87 /* ProfileViewController.swift */,
+				2C9C8959232D4CBB0047E2CC /* ViewControllers */,
+				2C9C8958232D4CA80047E2CC /* Storyboards */,
+				2C80A24D23196C9300FECD45 /* Assets.xcassets */,
+				2C80A24F23196C9300FECD45 /* LaunchScreen.storyboard */,
+				2C80A25223196C9300FECD45 /* Info.plist */,
+			);
+			path = sozial;
+			sourceTree = "<group>";
+		};
+		2C9C8958232D4CA80047E2CC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				2C80A25823196DAB00FECD45 /* Start.storyboard */,
 				2CBF134A2327F7B200E2D338 /* Main.storyboard */,
 				2C9C8956232D41D10047E2CC /* Profile.storyboard */,
@@ -93,11 +98,22 @@
 				2C9C8952232D41630047E2CC /* Camera.storyboard */,
 				2C9C8950232D41240047E2CC /* Discover.storyboard */,
 				2C9C894E232D40700047E2CC /* Home.storyboard */,
-				2C80A24D23196C9300FECD45 /* Assets.xcassets */,
-				2C80A24F23196C9300FECD45 /* LaunchScreen.storyboard */,
-				2C80A25223196C9300FECD45 /* Info.plist */,
 			);
-			path = sozial;
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2C9C8959232D4CBB0047E2CC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C80A25A2319701400FECD45 /* SignInViewController.swift */,
+				2C80A25C2319733800FECD45 /* SignUpViewController.swift */,
+				2C0E2C3C2319B010002C4B87 /* HomeViewController.swift */,
+				2C0E2C3E2319B032002C4B87 /* DiscoverViewController.swift */,
+				2C0E2C402319B046002C4B87 /* CameraViewController.swift */,
+				2C0E2C422319B062002C4B87 /* ActivityViewController.swift */,
+				2C0E2C442319B078002C4B87 /* ProfileViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

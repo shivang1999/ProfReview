@@ -9,15 +9,19 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController
+{
 
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+
     @IBOutlet weak var profileImage: UIImageView!
+    
+    var selectedImage: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,8 +59,17 @@ class SignUpViewController: UIViewController {
         
         profileImage.layer.cornerRadius = 40
         profileImage.clipsToBounds = true
-
-        // Do any additional setup after loading the view.
+        
+       let tapGesture =  UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
+        profileImage.addGestureRecognizer(tapGesture)
+        profileImage.isUserInteractionEnabled = true
+        
+    }
+    @objc func handleSelectProfileImageView() {
+        let pickerController = UIImagePickerController() //pickerController is working
+        pickerController.delegate = self
+        present(pickerController, animated: true, completion: nil)
+        print("Tapped")
     }
     
     @IBAction func dismiss_onClick(_ sender: Any) {
@@ -71,26 +84,42 @@ class SignUpViewController: UIViewController {
                 print(error!.localizedDescription)
                 return
             }
-            let ref = Database.database().reference()
-            let usersReference = ref.child("users")
-//            print(usersReference.description())
-            let uid = authResult?.user.uid
-            let newUserReference = usersReference.child(uid!)
-            newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!])
-            print(" description: \(newUserReference.description())")
+            let uid = authResult?.uid
+            let storageRef = Storage.storage().reference(forURL: "gs://sozial-c095f.appspot.com").child("profile_image").child(uid!)
+            if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+                storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
+                    if error != nil {
+                        return
+                    }
+                    
+                    let profileImageUrl = metadata?.downloadURL()?.absoluteString
+                    let ref = Database.database().reference()
+                    let usersReference = ref.child("users")
+                    let newUserReference = usersReference.child(uid!)
+                    newUserReference.setValue(["username": self.usernameTextField.text!, "email": self.emailTextField.text!, "profileImageUrl": profileImageUrl])
+                })
+            }
+        
             
             
-            
-        }}
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        }
+        
     }
-    */
 
 }
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        print("did Finish Picking media")
+        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            selectedImage = image
+//            print(info)
+            profileImage.image = image
+        }
+       
+        dismiss(animated: true, completion: nil)
+        
+    }
+}
+
+

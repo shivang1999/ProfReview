@@ -7,6 +7,7 @@ target 'sozial' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage','~>4.0'
 
   # Pods for sozial
 

@@ -49,7 +49,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="6MJ-b0-2V8" kind="presentation" id="Aqk-4z-ula"/>
+                                            <action selector="signInButton_TouchUpinside:" destination="gh7-Qq-Gc7" eventType="touchUpInside" id="8dM-nD-mkB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -90,6 +90,8 @@
                     <connections>
                         <outlet property="emailTextField" destination="iIH-Nl-FlA" id="Z3Q-JA-ReH"/>
                         <outlet property="passwordTextField" destination="FJR-gR-8vw" id="MeL-R4-gNo"/>
+                        <outlet property="signInButton" destination="1iG-yX-qeK" id="qoq-bB-jOQ"/>
+                        <segue destination="6MJ-b0-2V8" kind="presentation" identifier="signInToTabbarVC" id="5Ch-gb-1nw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfG-U5-e7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,6 +191,7 @@
                         <outlet property="profileImage" destination="Hka-hg-Xha" id="aRT-yY-2mK"/>
                         <outlet property="signUpButton" destination="vSG-ej-3FB" id="rjL-vG-d4I"/>
                         <outlet property="usernameTextField" destination="kWo-ZA-ShR" id="TtB-lF-5PX"/>
+                        <segue destination="6MJ-b0-2V8" kind="presentation" identifier="signUpToTabbarVC" id="ehJ-Cl-ja3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zxu-xO-Hu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,4 +210,7 @@
     <resources>
         <image name="placeholderImg" width="225" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ehJ-Cl-ja3"/>
+    </inferredMetricsTieBreakers>
 </document>

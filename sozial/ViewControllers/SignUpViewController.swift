@@ -118,6 +118,8 @@ class SignUpViewController: UIViewController
                     let profileImageUrl = metadata?.downloadURL()?.absoluteString
                     self.setUserInfomation(profileImageUrl: profileImageUrl!, username: self.usernameTextField.text!, email: self.emailTextField.text!, uid: uid!)
                     
+                    
+                    
                    
                 })
             }
@@ -133,6 +135,7 @@ class SignUpViewController: UIViewController
         let usersReference = ref.child("users")
         let newUserReference = usersReference.child(uid)
         newUserReference.setValue(["username": username, "email": email, "profileImageUrl": profileImageUrl])
+         self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
     }
 }
 

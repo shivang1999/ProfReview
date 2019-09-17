@@ -13,7 +13,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="95m-Pu-cFe">
             <objects>
-                <viewController id="gh7-Qq-Gc7" customClass="SignInViewController" customModule="sozial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="gh7-Qq-Gc7" customClass="SignInViewController" customModule="sozial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rgL-vo-rnw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,6 +211,6 @@
         <image name="placeholderImg" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ehJ-Cl-ja3"/>
+        <segue reference="5Ch-gb-1nw"/>
     </inferredMetricsTieBreakers>
 </document>

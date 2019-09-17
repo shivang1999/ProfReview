@@ -41,6 +41,22 @@ class SignInViewController: UIViewController {
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         handleTextField()
         
+//            print("current user : \(Auth.auth().currentUser)")
+//            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+//                self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+//            }
+//            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+
+        }
+
+        
     }
     
     func handleTextField() {

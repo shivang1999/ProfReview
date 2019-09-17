@@ -61,7 +61,7 @@ class SignUpViewController: UIViewController
         profileImage.layer.cornerRadius = 40
         profileImage.clipsToBounds = true
         
-       let tapGesture =  UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
+       let tapGesture =  UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
         signUpButton.isEnabled = false
@@ -73,9 +73,9 @@ class SignUpViewController: UIViewController
     }
     
     func handleTextField() {
-        usernameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        usernameTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControlEvents.editingChanged)
         
     }
     
@@ -94,10 +94,10 @@ class SignUpViewController: UIViewController
     
     
     @objc func handleSelectProfileImageView() {
-        let pickerController = UIImagePickerController() //pickerController is working
+        let pickerController = UIImagePickerController()
         pickerController.delegate = self
         present(pickerController, animated: true, completion: nil)
-        print("Tapped")
+        
     }
     
     @IBAction func dismiss_onClick(_ sender: Any) {
@@ -131,7 +131,6 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
         print("did Finish Picking media")
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
             selectedImage = image
-//            print(info)
             profileImage.image = image
         }
        

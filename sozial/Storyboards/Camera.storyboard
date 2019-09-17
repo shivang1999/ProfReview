@@ -10,21 +10,79 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Camera-->
+        <!--Post Your Review-->
         <scene sceneID="pHn-Wd-6bu">
             <objects>
                 <viewController id="gcX-0x-57F" customClass="CameraViewController" customModule="sozial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MRI-Yf-EiB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-b9-Ewh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AtN-Pn-Irb">
+                                        <rect key="frame" x="96" y="10" width="271" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-photo" translatesAutoresizingMaskIntoConstraints="NO" id="35n-9j-b9n">
+                                        <rect key="frame" x="8" y="10" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="GUF-Ne-dcz"/>
+                                            <constraint firstAttribute="width" constant="80" id="J3U-fP-1Lr"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="35n-9j-b9n" secondAttribute="bottom" constant="10" id="3cw-u1-3jg"/>
+                                    <constraint firstAttribute="height" constant="100" id="Iz5-31-Q3b"/>
+                                    <constraint firstItem="35n-9j-b9n" firstAttribute="top" secondItem="pV3-b9-Ewh" secondAttribute="top" constant="10" id="N4m-V4-0I1"/>
+                                    <constraint firstItem="35n-9j-b9n" firstAttribute="leading" secondItem="pV3-b9-Ewh" secondAttribute="leading" constant="8" id="Nws-6j-6q7"/>
+                                    <constraint firstItem="AtN-Pn-Irb" firstAttribute="top" secondItem="pV3-b9-Ewh" secondAttribute="top" constant="10" id="ZSf-es-XY7"/>
+                                    <constraint firstItem="AtN-Pn-Irb" firstAttribute="leading" secondItem="35n-9j-b9n" secondAttribute="trailing" constant="8" id="dbd-1q-Gdm"/>
+                                    <constraint firstAttribute="bottom" secondItem="AtN-Pn-Irb" secondAttribute="bottom" constant="10" id="g9B-fY-eUk"/>
+                                    <constraint firstAttribute="trailing" secondItem="AtN-Pn-Irb" secondAttribute="trailing" constant="8" id="hH0-FF-xKy"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o01-hn-tF9">
+                                <rect key="frame" x="8" y="609" width="359" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zzv-Bj-cU4"/>
+                                </constraints>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButton_touchUpInside:" destination="gcX-0x-57F" eventType="touchUpInside" id="i2V-en-xyE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pV3-b9-Ewh" firstAttribute="top" secondItem="wG3-uV-CMj" secondAttribute="top" id="5IB-ep-Os3"/>
+                            <constraint firstItem="pV3-b9-Ewh" firstAttribute="leading" secondItem="wG3-uV-CMj" secondAttribute="leading" id="Av4-Ie-aYs"/>
+                            <constraint firstItem="wG3-uV-CMj" firstAttribute="trailing" secondItem="o01-hn-tF9" secondAttribute="trailing" constant="8" id="cSk-da-fhf"/>
+                            <constraint firstItem="wG3-uV-CMj" firstAttribute="bottom" secondItem="o01-hn-tF9" secondAttribute="bottom" constant="8" id="pHP-g5-tHg"/>
+                            <constraint firstItem="o01-hn-tF9" firstAttribute="leading" secondItem="wG3-uV-CMj" secondAttribute="leading" constant="8" id="wZZ-kN-TGJ"/>
+                            <constraint firstItem="pV3-b9-Ewh" firstAttribute="trailing" secondItem="wG3-uV-CMj" secondAttribute="trailing" id="xaI-Lb-e35"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wG3-uV-CMj"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Camera" id="iw3-74-3VA"/>
+                    <navigationItem key="navigationItem" title="Post Your Review" id="iw3-74-3VA"/>
+                    <connections>
+                        <outlet property="photo" destination="35n-9j-b9n" id="ike-JK-f7K"/>
+                        <outlet property="reviewTextView" destination="AtN-Pn-Irb" id="Y1u-dk-Tvw"/>
+                        <outlet property="shareButton" destination="o01-hn-tF9" id="B1f-xg-lvJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEb-p0-oJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3862" y="754"/>
+            <point key="canvasLocation" x="3861.5999999999999" y="753.37331334332839"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6eS-Ak-Hwd">
@@ -50,5 +108,6 @@
     </scenes>
     <resources>
         <image name="Photo" width="22" height="23"/>
+        <image name="placeholder-photo" width="840" height="600"/>
     </resources>
 </document>

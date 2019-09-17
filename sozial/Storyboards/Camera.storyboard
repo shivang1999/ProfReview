@@ -73,9 +73,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wG3-uV-CMj"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Post Your Review" id="iw3-74-3VA"/>
+                    <navigationItem key="navigationItem" title="Post Your Review" id="iw3-74-3VA">
+                        <barButtonItem key="leftBarButtonItem" title="Remove" id="eMK-4r-Qmk">
+                            <connections>
+                                <action selector="remove_TouchUpInside:" destination="gcX-0x-57F" id="xdD-8e-GbV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="photo" destination="35n-9j-b9n" id="ike-JK-f7K"/>
+                        <outlet property="removeButton" destination="eMK-4r-Qmk" id="9W9-QY-Pjs"/>
                         <outlet property="reviewTextView" destination="AtN-Pn-Irb" id="Y1u-dk-Tvw"/>
                         <outlet property="shareButton" destination="o01-hn-tF9" id="B1f-xg-lvJ"/>
                     </connections>

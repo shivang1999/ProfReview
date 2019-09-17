@@ -101,42 +101,20 @@ class SignUpViewController: UIViewController
     }
     
     @IBAction func signUpBtn_TouchUpinside(_ sender: Any) {
-//        print(ref.description())
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { authResult, error in
-            
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            let uid = authResult?.uid
-            let storageRef = Storage.storage().reference(forURL: "gs://sozial-c095f.appspot.com").child("profile_image").child(uid!)
-            if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
-                storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
-                    if error != nil {
-                        return
-                    }
-                    let profileImageUrl = metadata?.downloadURL()?.absoluteString
-                    self.setUserInfomation(profileImageUrl: profileImageUrl!, username: self.usernameTextField.text!, email: self.emailTextField.text!, uid: uid!)
-                    
-                    
-                    
-                   
-                })
-            }
-        
-            
-            
+       if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+        AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+            self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
+
+        }) { (errorString) in
+            print(errorString!)
         }
         
+        }
+       else {
+        print("Profile Image can't be empty")
+        }
     }
 
-    func setUserInfomation(profileImageUrl: String, username: String,email: String, uid: String) {
-        let ref = Database.database().reference()
-        let usersReference = ref.child("users")
-        let newUserReference = usersReference.child(uid)
-        newUserReference.setValue(["username": username, "email": email, "profileImageUrl": profileImageUrl])
-         self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
-    }
 }
 
 

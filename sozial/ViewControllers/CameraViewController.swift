@@ -1,12 +1,14 @@
 //
 //  CameraViewController.swift
-//  sozial
+//  ProfReview
 //
 //  Created by Shivang Ranjan on 31/08/19.
 //  Copyright © 2019 shivangcodes. All rights reserved.
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseStorage
 
 class CameraViewController: UIViewController {
 
@@ -31,6 +33,38 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func shareButton_touchUpInside(_ sender: Any) {
+        ProgressHUD.show("waiting..", interaction: false)
+        if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
+            let photoIdString = NSUUID().uuidString
+            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOT_REF).child("posts").child(photoIdString)
+            storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    ProgressHUD.showError(error!.localizedDescription)
+                    return
+                }
+                let photoUrl = metadata?.downloadURL()?.absoluteString
+                self.sendDataToDatabase(photoUrl: photoUrl!)
+            })
+        }
+        else {
+            ProgressHUD.showError("Profile Image can't be empty")
+        }
+    }
+    
+    func sendDataToDatabase(photoUrl: String) {
+        let ref = Database.database().reference()
+        let postsReference = ref.child("posts")
+        let newPostId = postsReference.childByAutoId().key
+        let newPostReference = postsReference.child(newPostId)
+        newPostReference.setValue(["photoUrl": photoUrl]) { (error, ref) in
+            if error != nil {
+                ProgressHUD.showError(error!.localizedDescription)
+                return
+            }
+            ProgressHUD.showSuccess("Success")
+            
+        }
+        
     }
     
 }

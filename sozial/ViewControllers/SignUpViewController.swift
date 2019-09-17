@@ -1,6 +1,6 @@
 //
 //  SignUpViewController.swift
-//  sozial
+//  ProfReview
 //
 //  Created by Shivang Ranjan on 30/08/19.
 //  Copyright © 2019 shivangcodes. All rights reserved.
@@ -106,6 +106,7 @@ class SignUpViewController: UIViewController
     
     @IBAction func signUpBtn_TouchUpinside(_ sender: Any) {
         view.endEditing(true)
+        ProgressHUD.show("waiting..", interaction: false)
        if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
         AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
             ProgressHUD.showSuccess("Success")

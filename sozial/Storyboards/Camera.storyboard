@@ -28,24 +28,24 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-photo" translatesAutoresizingMaskIntoConstraints="NO" id="35n-9j-b9n">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-photo" translatesAutoresizingMaskIntoConstraints="NO" id="35n-9j-b9n">
                                         <rect key="frame" x="8" y="10" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="GUF-Ne-dcz"/>
-                                            <constraint firstAttribute="width" constant="80" id="J3U-fP-1Lr"/>
+                                            <constraint firstAttribute="height" constant="80" id="NX6-6i-2eG"/>
+                                            <constraint firstAttribute="width" constant="80" id="P8F-PG-r62"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="35n-9j-b9n" secondAttribute="bottom" constant="10" id="3cw-u1-3jg"/>
+                                    <constraint firstItem="AtN-Pn-Irb" firstAttribute="leading" secondItem="35n-9j-b9n" secondAttribute="trailing" constant="8" id="6Zq-tb-w2U"/>
                                     <constraint firstAttribute="height" constant="100" id="Iz5-31-Q3b"/>
-                                    <constraint firstItem="35n-9j-b9n" firstAttribute="top" secondItem="pV3-b9-Ewh" secondAttribute="top" constant="10" id="N4m-V4-0I1"/>
-                                    <constraint firstItem="35n-9j-b9n" firstAttribute="leading" secondItem="pV3-b9-Ewh" secondAttribute="leading" constant="8" id="Nws-6j-6q7"/>
-                                    <constraint firstItem="AtN-Pn-Irb" firstAttribute="top" secondItem="pV3-b9-Ewh" secondAttribute="top" constant="10" id="ZSf-es-XY7"/>
-                                    <constraint firstItem="AtN-Pn-Irb" firstAttribute="leading" secondItem="35n-9j-b9n" secondAttribute="trailing" constant="8" id="dbd-1q-Gdm"/>
-                                    <constraint firstAttribute="bottom" secondItem="AtN-Pn-Irb" secondAttribute="bottom" constant="10" id="g9B-fY-eUk"/>
-                                    <constraint firstAttribute="trailing" secondItem="AtN-Pn-Irb" secondAttribute="trailing" constant="8" id="hH0-FF-xKy"/>
+                                    <constraint firstItem="AtN-Pn-Irb" firstAttribute="top" secondItem="pV3-b9-Ewh" secondAttribute="top" constant="10" id="cgW-IZ-XF1"/>
+                                    <constraint firstItem="AtN-Pn-Irb" firstAttribute="leading" secondItem="35n-9j-b9n" secondAttribute="trailing" constant="8" id="gJo-dw-LGm"/>
+                                    <constraint firstItem="35n-9j-b9n" firstAttribute="leading" secondItem="pV3-b9-Ewh" secondAttribute="leading" constant="8" id="qQy-U5-fBw"/>
+                                    <constraint firstAttribute="trailing" secondItem="AtN-Pn-Irb" secondAttribute="trailing" constant="8" id="rcV-rP-U7z"/>
+                                    <constraint firstItem="35n-9j-b9n" firstAttribute="top" secondItem="pV3-b9-Ewh" secondAttribute="top" constant="10" id="v2Q-2G-Yzh"/>
+                                    <constraint firstAttribute="bottom" secondItem="AtN-Pn-Irb" secondAttribute="bottom" constant="10" id="xGj-sB-CN4"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o01-hn-tF9">

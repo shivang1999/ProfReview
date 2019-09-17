@@ -42,6 +42,7 @@ class SignInViewController: UIViewController {
         signInButton.isEnabled = false
         handleTextField()
         
+        
 //            print("current user : \(Auth.auth().currentUser)")
 //            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
 //                self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
@@ -49,6 +50,12 @@ class SignInViewController: UIViewController {
 //            self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touch")
+        view.endEditing(true)
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -80,10 +87,14 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButton_TouchUpinside(_ sender: Any) {
+        view.endEditing(true)
+        ProgressHUD.show("Waiting...", interaction: false)
         AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+            ProgressHUD.showSuccess("Success")
             self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
 
         }, onError: { error in
+            ProgressHUD.showError(error!)
             print(error!)
             
         })

@@ -68,6 +68,10 @@ class SignUpViewController: UIViewController
         handleTextField()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     func handleTextField() {
         usernameTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
         emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
@@ -101,17 +105,20 @@ class SignUpViewController: UIViewController
     }
     
     @IBAction func signUpBtn_TouchUpinside(_ sender: Any) {
+        view.endEditing(true)
        if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
         AuthService.signUp(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, imageData: imageData, onSuccess: {
+            ProgressHUD.showSuccess("Success")
             self.performSegue(withIdentifier: "signUpToTabbarVC", sender: nil)
 
         }) { (errorString) in
-            print(errorString!)
+            ProgressHUD.showError(errorString!)
         }
         
         }
        else {
-        print("Profile Image can't be empty")
+        ProgressHUD.showError("Profile Image can't be empty")
+//        print("Profile Image can't be empty")
         }
     }
 

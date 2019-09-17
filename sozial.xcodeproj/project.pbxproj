@@ -14,6 +14,8 @@
 		2C0E2C452319B078002C4B87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E2C442319B078002C4B87 /* ProfileViewController.swift */; };
 		2C575B592330EC0500013811 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C575B582330EC0500013811 /* AuthService.swift */; };
 		2C575B5B2331027500013811 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C575B5A2331027500013811 /* Config.swift */; };
+		2C575B602331502600013811 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C575B5E2331502600013811 /* ProgressHUD.m */; };
+		2C575B612331502600013811 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C575B5F2331502600013811 /* ProgressHUD.bundle */; };
 		2C80A24723196C9100FECD45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C80A24623196C9100FECD45 /* AppDelegate.swift */; };
 		2C80A24E23196C9300FECD45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C80A24D23196C9300FECD45 /* Assets.xcassets */; };
 		2C80A25123196C9300FECD45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C80A24F23196C9300FECD45 /* LaunchScreen.storyboard */; };
@@ -39,6 +41,10 @@
 		2C0E2C442319B078002C4B87 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2C575B582330EC0500013811 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		2C575B5A2331027500013811 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		2C575B5C2331502500013811 /* sozial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sozial-Bridging-Header.h"; sourceTree = "<group>"; };
+		2C575B5D2331502600013811 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		2C575B5E2331502600013811 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		2C575B5F2331502600013811 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		2C80A24323196C9100FECD45 /* sozial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sozial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C80A24623196C9100FECD45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C80A24D23196C9300FECD45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +106,10 @@
 				2C80A24D23196C9300FECD45 /* Assets.xcassets */,
 				2C80A24F23196C9300FECD45 /* LaunchScreen.storyboard */,
 				2C80A25223196C9300FECD45 /* Info.plist */,
+				2C575B5F2331502600013811 /* ProgressHUD.bundle */,
+				2C575B5D2331502600013811 /* ProgressHUD.h */,
+				2C575B5E2331502600013811 /* ProgressHUD.m */,
+				2C575B5C2331502500013811 /* sozial-Bridging-Header.h */,
 			);
 			path = sozial;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 				TargetAttributes = {
 					2C80A24223196C9100FECD45 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -209,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C575B612331502600013811 /* ProgressHUD.bundle in Resources */,
 				2C80A25123196C9300FECD45 /* LaunchScreen.storyboard in Resources */,
 				2C9C8953232D41630047E2CC /* Camera.storyboard in Resources */,
 				2C9C894F232D40700047E2CC /* Home.storyboard in Resources */,
@@ -288,6 +300,7 @@
 				2C575B592330EC0500013811 /* AuthService.swift in Sources */,
 				2C0E2C3D2319B010002C4B87 /* HomeViewController.swift in Sources */,
 				2C0E2C432319B062002C4B87 /* ActivityViewController.swift in Sources */,
+				2C575B602331502600013811 /* ProgressHUD.m in Sources */,
 				2C0E2C3F2319B032002C4B87 /* DiscoverViewController.swift in Sources */,
 				2C575B5B2331027500013811 /* Config.swift in Sources */,
 				2C0E2C452319B078002C4B87 /* ProfileViewController.swift in Sources */,
@@ -430,6 +443,7 @@
 			baseConfigurationReference = 72B829FEDCFACF377DE2A19B /* Pods-sozial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = sozial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -438,6 +452,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shivangcodes.sozial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "sozial/sozial-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,6 +464,7 @@
 			baseConfigurationReference = C36F8F6AA6B7B99B82284F1F /* Pods-sozial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = sozial/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -456,6 +473,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shivangcodes.sozial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "sozial/sozial-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

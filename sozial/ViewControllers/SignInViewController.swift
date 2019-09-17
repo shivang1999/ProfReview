@@ -39,6 +39,7 @@ class SignInViewController: UIViewController {
             bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         
         passwordTextField.layer.addSublayer(bottomLayerPassword)
+        signInButton.isEnabled = false
         handleTextField()
         
 //            print("current user : \(Auth.auth().currentUser)")
@@ -53,6 +54,7 @@ class SignInViewController: UIViewController {
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil {
             self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
+            
 
         }
 
@@ -60,8 +62,8 @@ class SignInViewController: UIViewController {
     }
     
     func handleTextField() {
-        emailTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
-        passwordTextField.addTarget(self, action: #selector(SignUpViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        emailTextField.addTarget(self, action: #selector(SignInViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(SignInViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     
     @objc func textFieldDidChange() {
@@ -78,15 +80,15 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButton_TouchUpinside(_ sender: Any) {
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            if error != nil{
-                print(error!.localizedDescription)
-                return
-            }
+        AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
             self.performSegue(withIdentifier: "signInToTabbarVC", sender: nil)
-            print(user?.email)
+
+        }, onError: { error in
+            print(error!)
             
-        }
+        })
+        
+
     }
     
 }

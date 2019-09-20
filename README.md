@@ -1,5 +1,4 @@
 # ProfReview
-> Der Schwerpunkt lag auf dem Aufbau von Beziehungen zwischen den Teilnehmenden. 
 
 ## Features
 

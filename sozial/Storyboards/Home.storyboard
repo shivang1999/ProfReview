@@ -17,7 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="8jZ-J0-0K0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mf6-2q-Uqj">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="44" id="vjz-VR-Hsn">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vjz-VR-Hsn" id="krb-Jf-1Ri">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mf6-2q-Uqj" firstAttribute="trailing" secondItem="EVS-Mg-IZD" secondAttribute="trailing" id="9YX-Ss-zbC"/>
+                            <constraint firstItem="mf6-2q-Uqj" firstAttribute="leading" secondItem="EVS-Mg-IZD" secondAttribute="leading" id="Dyx-gD-mI1"/>
+                            <constraint firstItem="mf6-2q-Uqj" firstAttribute="bottom" secondItem="EVS-Mg-IZD" secondAttribute="bottom" id="P2i-2J-EaU"/>
+                            <constraint firstItem="mf6-2q-Uqj" firstAttribute="top" secondItem="EVS-Mg-IZD" secondAttribute="top" id="uxA-iB-roP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EVS-Mg-IZD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Jki-Vc-q44">
@@ -27,10 +49,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="mf6-2q-Uqj" id="Tb9-Zj-XQI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDk-QC-rxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2257" y="756"/>
+            <point key="canvasLocation" x="2256.8000000000002" y="755.17241379310349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TFB-eH-RCo">

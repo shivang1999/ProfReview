@@ -12,7 +12,7 @@ import FirebaseStorage
 
 class CameraViewController: UIViewController {
 
-    @IBOutlet weak var reviewTextView: UITextView!
+    @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var shareButton: UIButton!
     
@@ -87,7 +87,7 @@ class CameraViewController: UIViewController {
         let postsReference = ref.child("posts")
         let newPostId = postsReference.childByAutoId().key
         let newPostReference = postsReference.child(newPostId)
-        newPostReference.setValue(["photoUrl": photoUrl, "caption": reviewTextView.text!]) { (error, ref) in
+        newPostReference.setValue(["photoUrl": photoUrl, "caption": captionTextView.text!]) { (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)
                 return
@@ -100,7 +100,7 @@ class CameraViewController: UIViewController {
     }
     
     func clean() {
-        self.reviewTextView.text = ""
+        self.captionTextView.text = ""
         self.photo.image = UIImage(named: "placeholder-photo")
         self.selectedImage = nil
     }

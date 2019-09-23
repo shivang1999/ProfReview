@@ -81,9 +81,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captionTextView" destination="AtN-Pn-Irb" id="png-3J-b1A"/>
                         <outlet property="photo" destination="35n-9j-b9n" id="ike-JK-f7K"/>
                         <outlet property="removeButton" destination="eMK-4r-Qmk" id="9W9-QY-Pjs"/>
-                        <outlet property="reviewTextView" destination="AtN-Pn-Irb" id="Y1u-dk-Tvw"/>
                         <outlet property="shareButton" destination="o01-hn-tF9" id="B1f-xg-lvJ"/>
                     </connections>
                 </viewController>

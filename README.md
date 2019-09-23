@@ -1,14 +1,13 @@
-# Sozial
-> Der Schwerpunkt lag auf dem Aufbau von Beziehungen zwischen den Teilnehmenden. 
+# ProfReview
 
 ## Features
 
 - [x] Sign Up View 
 - [x] Sign In View
-- [x] News Feed
-- [x] Posts
-- [x] User Profiles
-- [x] Hashtag System 
+- [x] ReviewFeed
+- [x] Add a review for your prof
+- [x] Prof Profiles
+- [x] Enjoy the Lottie Animations
 
 ## Requirements
 

@@ -9,12 +9,19 @@
 import Foundation
 
 class Post {
-    var caption: String
-    var photoUrl: String
-    
-    init(captionText: String, photoUrlString: String) {
-        caption = captionText
-        photoUrl = photoUrlString
+    var caption: String?
+    var photoUrl: String?
+
+}
+
+extension Post {
+    static func transformPost(dict: [String:Any]) -> Post {
+        let post = Post()
         
+        
+        post.caption = dict["caption"] as? String
+        post.photoUrl = dict["photoUrl"] as? String
+        return post
     }
 }
+

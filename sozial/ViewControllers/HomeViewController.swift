@@ -1,4 +1,5 @@
 
+//Shivang Ranjan
 
 import UIKit
 import FirebaseAuth
@@ -12,12 +13,6 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         loadPosts()
         
-//        var post = Post(captionText: "text", photoUrlString: "url1")
-//        print(post.caption)
-//        print(post.photoUrl)
-        
-        
-        
     }
     
     func loadPosts() {
@@ -26,13 +21,10 @@ class HomeViewController: UIViewController {
             print(Thread.isMainThread)
             print(snapshot.value)
             if let dict = snapshot.value as? [String: Any] {
-                var captionText = ""
-                if let caption = dict["caption"] as? String {
-                    captionText = caption
-                }
-                let photoUrlString = dict["photoUrl"] as! String
-                let post = Post(captionText: captionText, photoUrlString: photoUrlString)
-                self.posts.append(post)
+//                let post = Post()
+                let newPost = Post.transformPost(dict: dict)
+                
+                self.posts.append(newPost)
                 print(self.posts)
                 self.tableView.reloadData()
             }

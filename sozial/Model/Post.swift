@@ -23,5 +23,7 @@ extension Post {
         post.photoUrl = dict["photoUrl"] as? String
         return post
     }
+    
+    static func
 }
 

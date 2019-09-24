@@ -24,6 +24,6 @@ extension Post {
         return post
     }
     
-    static func
+    
 }
 
